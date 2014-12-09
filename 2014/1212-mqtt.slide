@@ -49,4 +49,4 @@ QoS 2：正確に1回送信する（ロスト・重複送信なし）
 
 .link https://github.com/yosssi/gmq *github.com/yosssi/gmq*
 
-.image 1212-mqtt/gmq.png
+.image 1212-mqtt/gmq.png _ 1000
