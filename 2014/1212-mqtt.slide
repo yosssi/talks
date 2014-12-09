@@ -16,12 +16,37 @@ MQTT - IoTを支えるプロトコル
 
 .image 1212-mqtt/https-mqtt.png
 
+* その他の特徴
+
+- 1対1のほか、1対多や多対多のやり取りが可能（Publish/Subscribeモデル）
+- メッセージ送信のサービス品質（QoS）を選べる
+
+QoS 0：最大1回送信する（ロストする場合がある）
+QoS 1：少なくとも1回送信する（重複して送信される場合がある）
+QoS 2：正確に1回送信する（ロスト・重複送信なし）
+
+- 切断後、再接続した場合に、切断中のメッセージを受信できる（Session）
+- 想定外の切断時に、事前に決めておいたメッセージを送信できる（Will）
+- 新規に接続したクライアントへ、最新のメッセージを送信できる（Retain）
+- TLSでメッセージを送信できる
+
 * IoT、M2Mの主役へ
 
 - 石油パイプラインのリアルタイム制御（温度、流量などの監視、元栓の自動開閉）
 - 自動車のリアルタイム監視（CES 2014）
-- Facebook Messanger
+- Facebook Messenger
 
 .image 1212-mqtt/cases.png
 
-* 特徴
+* 検証
+
+- Raspberry Piに搭載した人感センサのデータをMQTTでサーバへ送信
+- WICED Senceで取得したセンサデータをIntelEdison経由でMQTTでサーバへ送信
+
+.image 1212-mqtt/test.png
+
+* Go言語でMQTTクライアントを実装中
+
+.link https://github.com/yosssi/gmq *github.com/yosssi/gmq*
+
+.image 1212-mqtt/gmq.png
