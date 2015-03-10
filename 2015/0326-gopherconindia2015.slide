@@ -1,0 +1,53 @@
+GopherCon India 2015 参加報告
+RCOアドテク部 社外勉強会
+26 Mar 2015
+
+吉田 啓二
+株式会社リクルートコミュニケーションズ
+アドテクノロジーサービス開発部
+yoshida_keiji@r.recruit.co.jp
+
+* 自己紹介
+
+* 業務内容 1/2
+- 2014年7月に株式会社リクルートコミュニケーションズへ入社
+- [[https://sankak.jp/][仕事を辞めずに他社の経営に参画できるサービス「サンカク」]]の企画・立ち上げ
+.image 0326-gopherconindia2015/sankak.jpg _ 800
+
+* 業務内容 2/2
+- 2014年10月から株式会社リクルートライフスタイルへ出向
+- [[http://www.hotpepper.jp/][ホットペッパーグルメ]]の拡張・改善に従事
+.image 0326-gopherconindia2015/hpg.jpg _ 800
+
+* Goの経験 1/2
+- 2014年の年初からGoの使用を開始
+- いくつかのGoのオープンソースプロジェクトへ参画
+.link http://martini.codegangsta.io/ Martini - Sinatra風Webフレームワーク
+.link http://github.com/drone/drone Drone - CIサービス
+- 2014年5月に開催された [[http://gocon.connpass.com/event/6370/][Go Conference 2014 spring]] にて、[[http://slides.yoss.si/gocon/martini.html][Martiniについて発表]]
+.image 0326-gopherconindia2015/gocon2014spring.jpg _ 500
+
+* Goの経験 2/2
+- いくつかのパッケージを開発・管理
+.link https://github.com/yosssi/ace Ace - Slim風HTMLテンプレートエンジン
+.link https://github.com/yosssi/gcss GCSS - Sass風CSSプリプロセッサ
+.link https://github.com/yosssi/gmq GMQ - MQTTクライアント
+- 2015年2月にベンガルール（インド）で開催された [[http://www.gophercon.in/][GopherCon India 2015]] にて、[[http://talks.yoss.si/2015/0220-good-package.slide#1][上記のパッケージの開発・管理を通じて学んだことを発表]]
+.image 0326-gopherconindia2015/gopherconindia2015.jpg _ 500
+
+* GopherCon India とは
+
+* GopherCon India の概要
+- 今年から始まった、インドのベンガルールで行われるGoのカンファレンス
+- Innovation And Technology Trust という団体が主催
+- 2日間に渡り、約30名のスピーカーが発表
+- 様々な企業・サービスのエンジニアがスピーカーとして参加：[[https://www.datadoghq.com/][Datadog]], [[https://sourcegraph.com/][Sourcegraph]], [[https://keen.io/][Keen IO]], [[https://www.digitalocean.com/][DigitalOcean]], [[http://www.browserstack.com/][BrowserStack]] など
+.image 0326-gopherconindia2015/opening.jpg _ 700
+
+* （参考）大規模なGoのカンファレンス
+.link http://gocon.connpass.com/ GoCon：毎年春と秋に東京で開催
+.link http://www.gophercon.com/ GopherCon：毎年夏にデンバーで開催
+.link http://www.dotgo.eu/ dotGo：毎年秋にパリで開催
+.link https://fosdem.org/2015/ FOSDEM：毎年冬にブリュッセルで開催
+.link http://www.gophercon.in/ GopherCon India：毎年冬にベンガルールで開催
+
