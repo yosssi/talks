@@ -65,6 +65,36 @@ yoshida_keiji@r.recruit.co.jp
 
 * GopherCon India 2015 発表内容
 
+* Evolution of a Gopher - Francesc Campoy Flores
+
+* 概要
+- Goの初心者から熟練者までの各段階でどのようなことを行い、どのように成長すれば良いかを説明
+
+* 熟練者までの段階
+- the newcomer：Go言語を使い始めたばかりで、基本的な文法を学習している
+- the explorer：基本的な文法を理解して一連のプログラムを開発できる
+- the builder：大規模なプロジェクトで、Goを問題解決の手段として使用している
+- the expert：Goの使い方だけではなく、設計思想や哲学を理解している
+
+* the newcomerが行うべきこと
+- チュートリアル、ワークショップでの学習
+- 基本的な文法の理解（slice, map, function, type, method）
+- 小規模なプロジェクトの作成
+- リソース：Go tour、Go playground、ドキュメント、golang-nuts、slack、irc
+
+* the explorerが犯しがちな過ち
+- 他の言語の実装方法や慣例をGoへ当てはめようとしてしまう（reflectやunsafeパッケージを多用してしまう）
+- サードパーティのライブラリに必要以上に頼ってしまう
+
+* the explorerが行うべきこと
+- Goでの実装方法や慣例を理解すること
+- Goの標準ライブラリで何ができるかを理解すること
+- [[http://gophergala.com/][Gopher Gala]] や [[http://golang-challenge.com/][Go Challenge]] などのハッカソン、コンテストへ参加すること
+
+* the builderが行うべきこと
+
+* the expertが行うべきこと
+
 * 帰国後
 - 部長：「他にも同じようなカンファレンスあるの？」
 - 吉田：「アメリカやフランスでも大規模なGoのカンファレンスがあります。直近だと今年の7月にアメリカでありますね。」
