@@ -44,12 +44,14 @@ yoshida_keiji@r.recruit.co.jp
 - 様々な企業・サービスのエンジニアがスピーカーとして参加：[[https://www.datadoghq.com/][Datadog]], [[https://sourcegraph.com/][Sourcegraph]], [[https://keen.io/][Keen IO]], [[https://www.digitalocean.com/][DigitalOcean]], [[http://www.browserstack.com/][BrowserStack]] など
 .image 0326-gopherconindia2015/opening.jpg _ 700
 
-* （参考）大規模なGoのカンファレンス
-.link http://gocon.connpass.com/ GoCon：毎年春と秋に東京で開催
-.link http://www.gophercon.com/ GopherCon：毎年夏にデンバーで開催
-.link http://www.dotgo.eu/ dotGo：毎年秋にパリで開催
-.link https://fosdem.org/2015/ FOSDEM：毎年冬にブリュッセルで開催
-.link http://www.gophercon.in/ GopherCon India：毎年冬にベンガルールで開催
+* （参考）2015年に開催される（された）大規模なGoのカンファレンス
+.link https://fosdem.org/2015/ FOSDEM：2月、ブリュッセル
+.link http://www.gophercon.in/ GopherCon India：2月、ベンガルール
+.link http://gopherchina.org/ Gopher China：4月、上海
+.link http://gocon.connpass.com/ GoCon：5月・11月？、東京
+.link http://www.gophercon.com/ GopherCon：7月、デンバー
+.link http://gothamgo.com/ GothamGo：10月？、ニューヨーク
+.link http://www.dotgo.eu/ dotGo：11月、パリ
 
 * GopherCon India 2015 への参加経緯 1/2
 - 2014年8月に当該カンファレンスを発見
@@ -65,15 +67,19 @@ yoshida_keiji@r.recruit.co.jp
 
 * GopherCon India 2015 発表内容
 
+* 資料・動画
+- [[https://github.com/gopherconindia/talks/tree/master/2015][発表資料一覧]]
+- [[https://www.youtube.com/channel/UCa-OZB5VIMcdzgrXRM2U0Ww][発表動画一覧]]
+
 * Evolution of a Gopher - Francesc Campoy Flores
 
 * 概要
-- Goの初心者から熟練者までの各段階でどのようなことを行い、どのように成長すれば良いかを説明
+- Goの初心者から熟練者までの段階を4つに分けて定義し、各段階でどのようなことを行い、どのように成長すれば良いかを説明
 
-* 熟練者までの段階
+* 各段階
 - the newcomer：Go言語を使い始めたばかりで、基本的な文法を学習している
 - the explorer：基本的な文法を理解して一連のプログラムを開発できる
-- the builder：大規模なプロジェクトで、Goを問題解決の手段として使用している
+- the builder：大規模プロジェクトでGoを問題解決の手段として実際に使用している
 - the expert：Goの使い方だけではなく、設計思想や哲学を理解している
 
 * the newcomerが行うべきこと
@@ -92,8 +98,13 @@ yoshida_keiji@r.recruit.co.jp
 - [[http://gophergala.com/][Gopher Gala]] や [[http://golang-challenge.com/][Go Challenge]] などのハッカソン、コンテストへ参加すること
 
 * the builderが行うべきこと
+- Goを書き続け、Goで現実の問題を解決し続けること
+- 既存のプロジェクトへコントリビュートすること：[[http://golang.org/][Go]]、[[https://www.docker.com/][Docker]]、[[http://kubernetes.io/][Kubernetes]]、[[https://github.com/golang/go/wiki/Projects][他]]
+- コードレビューを行い、コーディングスタイルを統一させたり、ソフトウェアの品質を向上させたり、開発メンバのスキルを向上させたりすること
 
-* the expertが行うべきこと
+* the expertの姿
+- Goの仕様、哲学を熟知している
+- 自分の知識をコミュニティへシェアし、名前が知れ渡っている：コードレビュー、メーリングリストで質問に答える
 
 * 帰国後
 - 部長：「他にも同じようなカンファレンスあるの？」
