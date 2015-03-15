@@ -1,0 +1,19 @@
+"".heaped t=1 size=112 value=0 args=0x8 locals=0x18
+    ;snip
+  0x0023 00035 (stack_test.go:10) MOVQ  $type.[128]int64+0(SB),BX
+  0x002a 00042 (stack_test.go:10) MOVQ  BX,(SP)
+  0x002e 00046 (stack_test.go:10) PCDATA  $0,$0
+  0x002e 00046 (stack_test.go:10) CALL  ,runtime.newobject(SB) // HL
+  0x0033 00051 (stack_test.go:10) MOVQ  8(SP),BX
+  0x0038 00056 (stack_test.go:10) MOVQ  BX,"".autotmp_0001+16(SP)
+  0x003d 00061 (stack_test.go:10) MOVQ  "".autotmp_0001+16(SP),DI
+  0x0042 00066 (stack_test.go:10) CMPQ  DI,$0
+  0x0046 00070 (stack_test.go:10) JEQ $1,94
+  0x0048 00072 (stack_test.go:10) MOVL  $0,AX
+  0x004a 00074 (stack_test.go:10) DUFFZERO  ,$
+  0x004f 00079 (stack_test.go:10) MOVQ  "".autotmp_0001+16(SP),BX
+  0x0054 00084 (stack_test.go:10) MOVQ  BX,"".~r0+32(FP)
+  0x0059 00089 (stack_test.go:10) ADDQ  $24,SP
+  0x005d 00093 (stack_test.go:10) RET ,
+  0x005e 00094 (stack_test.go:10) MOVL  AX,(DI)
+  0x0060 00096 (stack_test.go:10) JMP ,72
