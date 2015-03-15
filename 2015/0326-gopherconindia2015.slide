@@ -106,7 +106,82 @@ yoshida_keiji@r.recruit.co.jp
 - Goの仕様、哲学を熟知している
 - 自分の知識をコミュニティへシェアし、名前が知れ渡っている：コードレビュー、メーリングリストで質問に答える
 
+* Principles of designing Go APIs with channels - Alan Shreve
+
+* 概要
+- channelを扱うAPIを設計する際の原則を、Goの標準ライブラリをもとに説明
+
+* APIは同期処理であるべきである
+- APIを同期実行するか非同期で実行するかを、APIのユーザが選択できるようにするため（同期処理のAPIを容易に非同期で実行できる）
+- Goの標準パッケージでは、channelを扱うAPIは全体の1%未満である：channelを扱わないAPIが約30,000本、channelを扱うAPIが約10本
+
+* APIの引数・戻り値のchannelについては、データの方向を定義すべきである
+  func After(d Duration) <-chan Time
+
+  func Notify(c chan<- os.Signal, sig ...os.Signal)
+- 正しくAPIが使用されているかをコンパイル時にチェックできるようにするため
+- APIのデータフローとAPIの使い方をわかり易くするため
+
+* channelへデータを送信できない場合の挙動（ブロックする・しない）をドキュメントに記載するべきである
+.code 0326-gopherconindia2015/new_ticker.go /START OMIT/,/END OMIT/
+.code 0326-gopherconindia2015/notify.go /START OMIT/,/END OMIT/
+
+* 値を有限回送信するchannelを返却する場合、その回数分のバッファサイズをそのchannelに設定すべきである
+.code 0326-gopherconindia2015/after.go /START OMIT/,/END OMIT/
+- channelへの値の送信がブロックされないようにするため
+
+* channelを引数で受け取る vs channelを生成して返却する 1/2
+  func Notify(c chan<- os.Signal, sig ...os.Signal)
+
+vs
+
+  func Notify(sig ...os.Signal) chan<- os.Signal
+
+* channelを引数で受け取る vs channelを生成して返却する 2/2
+- channelを引数で受け取るようにすることで、そのバッファサイズを呼び出し元で指定することができる
+- また、同じchannelを後続の処理で使用することができる
+.code 0326-gopherconindia2015/rcv_chan.go /START OMIT/,/END OMIT/
+- 読み取り専用channelを返却することで、使用中のchannelがAPIの外側で意図せずしてクローズされるようなバグを、コンパイル時にチェックして防ぐことができる
+.code 0326-gopherconindia2015/close_chan.go /START OMIT/,/END OMIT/
+
+* channelを扱うAPIを定義すべき場合
+- イベントの非同期通知：タイマーの発火、シグナルの受信、HTTP接続の切断など
+
+* channel vs コールバック
+  func ListenAndServe(addr string, handler Handler) error
+- コールバックの方が、複雑な処理を簡単に書くことができる：コールバック関数の連鎖、パニックリカバリ
+- channelの方が、処理フローがわかり易い
+- channel：Go風、コールバック：JS風
+
+* Tips for Creating a Good Package - Keiji Yoshida
+
+* 概要
+- 良いパッケージを作成するためのコツを紹介
+
+* コーディングスタイル
+- 以下に書かれているコーディングスタイルに従う必要がある
+.link http://golang.org/doc/effective_go.html Effective Go - The Go Programming Language
+.link https://github.com/golang/go/wiki/CodeReviewComments CodeReviewComments - go-wiki
+- [[https://github.com/golang/lint][Golint]] を使うと、ソースコードが上記のコーディングスタイルに従っているか否かを機械的にチェックできる
+- [[http://godoc.org/golang.org/x/tools/cmd/goimports][goimports]] を使うと、gofmtによるソースコードの整形に加えて、import文の構築（必要なパッケージの追加、不要なパッケージの除去）が自動的に行われる
+
+* 拡張性・柔軟性
+- 本当に公開する必要がある関数・メソッドのみを、公開すべきである
+- structを埋め込むことで、複数のstructに共通しているフィールド、メソッドを簡潔に定義できる
+- API（公開関数・メソッド）は同期処理であるべきである
+- APIの引数をinterfaceにすることで、そのAPIの使い勝手が大幅に良くなる
+
+* テスト
+- グローバル変数を使うことで、テストカバレッジを高めることができる
+- [[https://github.com/golang/go/wiki/TableDrivenTests][TableDrivenTests]] を用いることで、テストコードを簡潔で読みやすく、拡張しやすくできる
+- GoのコードをテストできるCIサービス
+Windows：[[https://ci.appveyor.com/][AppVeyor]]
+Linux：[[http://wercker.com/][wercker]]、[[https://drone.io/][drone.io]]、[[https://travis-ci.org/][Travis CI]]、[[https://circleci.com/][CircleCI]]
+テストカバレッジ測定：[[https://coveralls.io/][Coveralls]]、[[https://codecov.io/][Codecov]]
+
 * 帰国後
+
+* 部長との会話
 - 部長：「他にも同じようなカンファレンスあるの？」
 - 吉田：「アメリカやフランスでも大規模なGoのカンファレンスがあります。直近だと今年の7月にアメリカでありますね。」
 - 部長：「全部行ってきて良いよ。」
