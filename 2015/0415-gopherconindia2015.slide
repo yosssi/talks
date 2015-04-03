@@ -21,7 +21,7 @@ yoshida_keiji@r.recruit.co.jp
 
 * Goの経験 1/3
 - 2014年の年初からGoの使用を開始
-- いくつかのGoのオープンソースプロジェクトへ参画
+- いくつかのGoのOSSへコントリビュート
 .link http://martini.codegangsta.io/ Martini - Sinatra風Webフレームワーク
 .link http://github.com/drone/drone Drone - CIサービス
 - 2014年5月に開催された [[http://gocon.connpass.com/event/6370/][Go Conference 2014 spring]] にて、[[http://slides.yoss.si/gocon/martini.html][Martiniについて発表]]
@@ -37,8 +37,7 @@ yoshida_keiji@r.recruit.co.jp
 
 * Goの経験 3/3
 - [[http://gobench.org/][Go Benchmark Competition]] という、Go言語のベンチマークテストの結果を参加者同士で競い合うサービスをリリース
-- 現在、約70名のGo言語ユーザが参加
-.image 0415-gopherconindia2015/gobench.jpg _ 700
+.image 0415-gopherconindia2015/gobench.jpg _ 800
 
 * GopherCon India 2015 参加報告
 
@@ -109,7 +108,7 @@ yoshida_keiji@r.recruit.co.jp
 - コードレビューを行い、コーディングスタイルを統一させたり、ソフトウェアの品質を向上させたり、開発メンバのスキルを向上させたりすること
 
 * the expertの姿
-- Goの仕様、哲学を熟知している
+- Goの思想、哲学を熟知している
 - 自分の知識をコミュニティへシェアし、名前が知れ渡っている：コードレビュー、メーリングリストで質問に答える
 
 * Principles of designing Go APIs with channels - Alan Shreve
@@ -202,12 +201,13 @@ vs
 
 * 拡張性・柔軟性
 - 本当に公開する必要がある関数・メソッドのみを、公開すべきである
-- structを埋め込むことで、複数のstructに共通しているフィールド、メソッドを簡潔に定義できる
+- structの埋め込みを活用することで、複数のstructに共通しているフィールド、メソッドを簡潔に定義できる
 - API（公開関数・メソッド）は同期処理であるべきである
 - APIの引数をinterfaceにすることで、そのAPIの使い勝手が大幅に良くなる
+.code 0415-gopherconindia2015/compile_bef.go /START OMIT/,/END OMIT/
+.code 0415-gopherconindia2015/compile_aft.go /START OMIT/,/END OMIT/
 
 * テスト
-- グローバル変数を使うことで、テストカバレッジを高めることができる
 - [[https://github.com/golang/go/wiki/TableDrivenTests][TableDrivenTests]] を用いることで、テストコードを簡潔で読みやすく、拡張しやすくできる
 - GoのコードをテストできるCIサービス
 Windows：[[https://ci.appveyor.com/][AppVeyor]]
@@ -216,12 +216,25 @@ Linux：[[http://wercker.com/][wercker]]、[[https://drone.io/][drone.io]]、[[h
 
 * Go Benchmark Competition の紹介
 
-* Go言語のベンチマークテストの結果を参加者同士で競い合うサービス
+* 概要
+- Go言語のベンチマークテストの結果を参加者同士で競い合うサービス
 - [[http://gobench.org/][http://gobench.org/]]
 - Slackでソースコードの提出、ベンチマーク結果の確認を行う
 - ランキングはリアルタイムで集計され、公式ページに掲載される
-- 現在、約70名のGo言語ユーザが参加
 .image 0415-gopherconindia2015/gobench-slack.jpg _ 600
+
+* 動機
+- 簡潔な書き方は大体理解した
+- 次は、パフォーマンスの良いコードを書けるようになりたい
+- 実践で身につけるのが一番の近道のようである...
+
+* 社内の機械学習・アルゴリズム大会：チャットサービスの利用
+- チャットサービスのボットへソースコードを提出し、結果が自動的に評価されるという方法が、簡単で参加しやすい
+- チャットサービス上で、参加者同士のやり取りやナレッジの交換が行われやすい
+
+* 社内の機械学習・アルゴリズム大会：競争
+- 課題に取りかかるモチベーションを維持しやすい
+- 妥協せずに考え抜くことで、飛躍的に成長できる
 
 * 帰国後
 
