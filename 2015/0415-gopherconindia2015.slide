@@ -127,14 +127,6 @@ yoshida_keiji@r.recruit.co.jp
 - 正しくAPIが使用されているかをコンパイル時にチェックできるようにするため
 - APIのデータフローとAPIの使い方をわかり易くするため
 
-* channelへデータを送信できない場合の挙動（ブロックする・しない）をドキュメントに記載するべきである
-.code 0415-gopherconindia2015/new_ticker.go /START OMIT/,/END OMIT/
-.code 0415-gopherconindia2015/notify.go /START OMIT/,/END OMIT/
-
-* 値を有限回送信するchannelを返却する場合、その回数分のバッファサイズをそのchannelに設定すべきである
-.code 0415-gopherconindia2015/after.go /START OMIT/,/END OMIT/
-- channelへの値の送信がブロックされないようにするため
-
 * channelを引数で受け取る vs channelを生成して返却する 1/2
   func Notify(c chan<- os.Signal, sig ...os.Signal)
 
