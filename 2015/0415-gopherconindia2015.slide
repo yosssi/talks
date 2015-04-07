@@ -150,35 +150,6 @@ vs
 - channelの方が、処理フローがわかり易い
 - channel：Go風、コールバック：JS風
 
-* Go Faster: Optimising Go Programs - Jason Moiron
-
-* Structs vs Maps 1/2
-.code 0415-gopherconindia2015/bench_map.go /START OMIT/,/END OMIT/
-.code 0415-gopherconindia2015/bench_struct.go /START OMIT/,/END OMIT/
-  $ go test -bench .
-  ...
-  BenchmarkMapAccess     100000000        13.00 ns/op
-  BenchmarkStructAccess  500000000         0.63 ns/op
-
-* Structs vs Maps 2/2
-アセンブリ言語での比較（go tool 6g -S）
-
-.image 0415-gopherconindia2015/smvasm.png _ 600
-
-* Stack vs Heap 1/2
-.code 0415-gopherconindia2015/bench_stack.go /START OMIT/,/END OMIT/
-.code 0415-gopherconindia2015/bench_heap.go /START OMIT/,/END OMIT/
-
-  $ go test -bench .
-  ...
-  BenchmarkStack  10000000         122 ns/op
-  BenchmarkHeap    1000000        2082 ns/op
-
-* Stack vs Heap 2/2
-アセンブリ言語の内容（heap）
-
-.code 0415-gopherconindia2015/heap_asm.txt
-
 * Tips for Creating a Good Package - Keiji Yoshida
 
 * 概要
