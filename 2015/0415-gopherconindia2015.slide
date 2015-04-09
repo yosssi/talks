@@ -116,10 +116,6 @@ yoshida_keiji@r.recruit.co.jp
 * 概要
 - channelを扱うAPIを設計する際の原則を、Goの標準ライブラリをもとに説明
 
-* APIは同期処理であるべきである
-- APIを同期実行するか非同期で実行するかを、APIのユーザが選択できるようにするため（同期処理のAPIを容易に非同期で実行できる）
-- Goの標準パッケージでは、channelを扱うAPIは全体の1%未満である：channelを扱わないAPIが約30,000本、channelを扱うAPIが約10本
-
 * channelを引数で受け取る vs channelを生成して返却する 1/2
   func Notify(c chan<- os.Signal, sig ...os.Signal)
 
