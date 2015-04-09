@@ -154,8 +154,6 @@ vs
 
 * 拡張性・柔軟性
 - 本当に公開する必要がある関数・メソッドのみを、公開すべきである
-- structの埋め込みを活用することで、複数のstructに共通しているフィールド、メソッドを簡潔に定義できる
-- API（公開関数・メソッド）は同期処理であるべきである
 - APIの引数をinterfaceにすることで、そのAPIの使い勝手が大幅に良くなる
 .code 0415-gopherconindia2015/compile_bef.go /START OMIT/,/END OMIT/
 .code 0415-gopherconindia2015/compile_aft.go /START OMIT/,/END OMIT/
